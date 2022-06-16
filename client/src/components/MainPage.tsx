@@ -1,4 +1,4 @@
-import React, {SVGProps, useState} from 'react';
+import React, {SVGProps, useMemo, useState} from 'react';
 import {Box, Button} from "@mui/material";
 import DownloadPage from "./DownloadPage";
 import ReactLoading from 'react-loading'
@@ -6,7 +6,6 @@ import ReactLoading from 'react-loading'
 import '../styles/MainPage.scss'
 import SettingsImage from "./SettingsImage";
 import {SettingsImageTypes} from "../types/state";
-
 
 const MainPage = () => {
     const [loadingStatus, setLoadingStatus] = useState<boolean>(true);
@@ -17,6 +16,16 @@ const MainPage = () => {
         lightness: 1
     })
 
+    const {hue, saturation, lightness} = imageSettingsValue;
+
+    const filterValue = useMemo(() => {
+        return `
+    hue-rotate(${hue * 1.8}deg) 
+    saturate(${saturation * -1}%)
+    brightness(${lightness})
+    `
+    }, [hue, saturation, lightness])
+
     if (!image) return <DownloadPage handleSetImage={setImage} changeLoadStatus={setLoadingStatus}/>
 
     if (loadingStatus) {
@@ -26,12 +35,6 @@ const MainPage = () => {
     const resetImage = () => {
         setImage("")
     }
-
-    const filterValue = `
-    hue-rotate(${imageSettingsValue.hue * 1.8}deg) 
-    saturate(${imageSettingsValue.saturation * -1}%)
-    brightness(${imageSettingsValue.lightness})
-    `
 
     return (
         <Box className="mainPage-wrapper">

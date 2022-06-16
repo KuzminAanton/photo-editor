@@ -21,7 +21,7 @@ const SettingsImage: FC<SettingsImageProps> = ({setImageSettingsValue, imageSett
     }
 
     return (
-        <Box width={150}>
+        <Box className="settings-image">
             <Box>
                 <Typography className="SettingsImage-text" variant="h5">Hue</Typography>
                 <Slider
