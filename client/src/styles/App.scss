@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.main-page-title {
+  width: 700px;
+  margin-bottom: 30px;
+}
+
+.main-page-title-grandTitle {
+  color: #d4dde5;
+  text-align: center;
+}
+
+.main-page-title-subTitle {
+  color: #d4dde5;
+  text-align: right;
+}

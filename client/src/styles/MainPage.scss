@@ -1,0 +1,62 @@
+.mainPage-wrapper {
+  //width: 500px;
+  //height: 500px;
+  //filter: blur(9px);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.mainPage-editImage{
+  width: 1000px;
+  height: 600px;
+  margin-bottom: 40px;
+
+  .mainPage-image {
+    //border: 1px solid #ccc8c8;
+    border-radius: 15px;
+    padding: 15px;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    & > span {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      display: block;
+
+      & > span {
+        width: 2000%;
+        height: 100%;
+        display: block;
+        left: -950%;
+        position: absolute;
+
+        & > img {
+          display: block;
+          height: 100%;
+          max-width: 100%;
+          margin: auto;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+.mainPage-resetBtn {
+
+}
+
+.mainPage-settings {
+
+}
