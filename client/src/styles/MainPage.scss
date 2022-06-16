@@ -5,6 +5,10 @@
   position: relative;
   display: flex;
   flex-direction: row;
+
+  & > div {
+    margin-right: 40px;
+  }
 }
 
 .mainPage-editImage{
@@ -58,5 +62,6 @@
 }
 
 .mainPage-settings {
+
 
 }
